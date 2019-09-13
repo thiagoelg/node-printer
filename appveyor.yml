@@ -51,7 +51,7 @@ test_script:
   - npm --version
 
 after_test:
-  - node-gyp clean
+  - node_modules\.bin\node-gyp.cmd clean
   - ps: ./tools/buildWindows.ps1
 
 build: off
