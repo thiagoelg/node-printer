@@ -43,7 +43,7 @@ install:
   - cmd: SET PATH=c:\python27;%PATH%
   - cmd: SET JOBS=4
   - cmd: SET BUILD_ONLY=true
-  - cmd: npm install -g node-gyp node-pre-gyp
+  - cmd: npm install node-gyp node-pre-gyp
   - cmd: npm install --build-from-source
 
 test_script:
