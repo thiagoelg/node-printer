@@ -8,7 +8,7 @@ platform: x64
 image: Visual Studio 2017
 
 # Set a known clone folder
-clone_folder: c:\src\printer
+clone_folder: c:\p
 
 # fix lineendings in Windows
 init:
