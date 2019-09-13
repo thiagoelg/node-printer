@@ -20,14 +20,14 @@ init:
 environment:
   matrix:
     # Node.js
-    # - nodejs_version: "0.10.48"
-    # - nodejs_version: "0.12.18"
-    # - nodejs_version: "4.9.1"
-    # - nodejs_version: "5.9.1"
-    # - nodejs_version: "6.17.1"
-    # - nodejs_version: "8.16.1"
-    # - nodejs_version: "10.16.0"
-    # - nodejs_version: "11.15.0"
+    - nodejs_version: "0.10.48"
+    - nodejs_version: "0.12.18"
+    - nodejs_version: "4.9.1"
+    - nodejs_version: "5.9.1"
+    - nodejs_version: "6.17.1"
+    - nodejs_version: "8.16.1"
+    - nodejs_version: "10.16.0"
+    - nodejs_version: "11.15.0"
     - nodejs_version: "12.10.0"
       build_electron: "true"
 
