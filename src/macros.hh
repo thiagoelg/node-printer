@@ -113,7 +113,7 @@
 
 #define REQUIRE_ARGUMENT_STRINGW(args, i, var)                                        \
     ARG_CHECK_STRING(args, i);                                                       \
-    v8::String::Value var(args[i]->ToString()); \
+    v8::String::Value var(V8_LOCAL_STRING_FROM_VALUE(args[i])); \
 
 
 #define OPTIONAL_ARGUMENT_FUNCTION(i, var)                                     \
