@@ -111,7 +111,7 @@
     ARG_CHECK_STRING(args, i);                                                       \
     Nan::Utf8String var(V8_LOCAL_STRING_FROM_VALUE(args[i])); \
 
-#ifdef NODE_VERSION_AT_LEAST(12, 0, 0)
+#if NODE_VERSION_AT_LEAST(12, 0, 0)
     #define REQUIRE_ARGUMENT_STRINGW(args, i, var)                                        \
         ARG_CHECK_STRING(args, i);                                                       \
         v8::String::Value var(MY_NODE_MODULE_ISOLATE, (args[i]));
