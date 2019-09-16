@@ -695,9 +695,16 @@ MY_NODE_MODULE_CALLBACK(PrintDirect)
     REQUIRE_ARGUMENT_STRINGW(iArgs, 2, docname);
     REQUIRE_ARGUMENT_STRINGW(iArgs, 3, type);
 
+    std::string printernamenew;
+    v8::Local<v8::Value> arg1(iArgs[1]);
+    if (!getStringOrBufferFromV8Value(arg1, printernamenew))
+    {
+        RETURN_EXCEPTION_STR("Argument 1 must be a string or Buffer");
+    }
+
     BOOL     bStatus = true;
     // Open a handle to the printer.
-    PrinterHandle printerHandle((LPWSTR)(*printername));
+    PrinterHandle printerHandle((LPWSTR)(*arg1));
     DOC_INFO_1W DocInfo;
     DWORD      dwJob = 0L;
     DWORD      dwBytesWritten = 0L;

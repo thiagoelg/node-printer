@@ -6,7 +6,7 @@
 
 // NODE_MODULE_VERSION was incremented for v0.11
 
-#if NODE_VERSION_AT_LEAST(0, 11, 9)
+#if NODE_VERSION_AT_LEAST(0, 11, 10)
 #  define MY_NODE_MODULE_ISOLATE_DECL v8::Isolate* isolate = v8::Isolate::GetCurrent();
 #  define MY_NODE_MODULE_ISOLATE      isolate
 #  define MY_NODE_MODULE_HANDLESCOPE MY_NODE_MODULE_ISOLATE_DECL Nan::HandleScope scope
