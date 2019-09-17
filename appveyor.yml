@@ -44,15 +44,15 @@ install:
   - cmd: SET JOBS=4
   - cmd: SET BUILD_ONLY=true
   - cmd: npm install node-gyp node-pre-gyp
+  - ps: node_modules\.bin\node-pre-gyp.cmd configure --target=$env:nodejs_version
+  - ps: node_modules\.bin\node-pre-gyp.cmd build package --target=$env:nodejs_version --target_arch=x64
+  - ps: node_modules\.bin\node-pre-gyp.cmd configure --target=$env:nodejs_version
+  - ps: node_modules\.bin\node-pre-gyp.cmd build package --target=$env:nodejs_version --target_arch=ia32
   - ps: ./tools/buildWindows.ps1
 
 test_script:
   - node --version
   - npm --version
-
-# after_test:
-#   - node_modules\.bin\node-gyp.cmd clean
-#   - ps: ./tools/buildWindows.ps1
 
 build: off
 

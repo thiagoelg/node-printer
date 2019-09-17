@@ -44,11 +44,11 @@ after_script:
   - npm test
 
 # Need S3 Upload for Artifacts
-# addons:
-#   artifacts:
-#     debug: true
-#     paths:
-#     - ./build/stage/**/*.tar.gz
+addons:
+  artifacts:
+    debug: true
+    paths:
+    - ./build/stage/**/*.tar.gz
 
 git:
   depth: 1
