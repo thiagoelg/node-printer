@@ -14,11 +14,16 @@ matrix:
   allow_failures:
     - env: NODE_VERSION="0.10.48"
     - env: NODE_VERSION="0.12.18"
+
+before_script:
+  - git config --global user.name "Ion Lupascu"
+  - git config --global user.email ionlupascu@gmail.com
+
 before_install:
   - git clone https://github.com/creationix/nvm.git ./.nvm
   - source ./.nvm/nvm.sh
-  - nvm install 12 64
-  - nvm use 12
+  - nvm install $NODE_VERSION 64
+  - nvm use $NODE_VERSION
   - npm -v
   - node -v
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
@@ -29,15 +34,21 @@ before_install:
       sudo apt-get install -qq debhelper autotools-dev cups-ppdc libcups2-dev cups imagemagick ghostscript;
     fi
   - "export JOBS=4"
-  - npm install -g node-gyp node-pre-gyp
   - BUILD_ONLY=true npm install --build-from-source
+
+script:
+  - npm test
+
+after_script:
+  - nvm install 12 64
+  - nvm use 12
+  - rm -r node_modules
+  - npm install -g node-gyp node-pre-gyp
+  - npm install --build-from-source
   - node-pre-gyp configure --target=$NODE_VERSION
   - node-pre-gyp build package --target=$NODE_VERSION --target_arch=x64
   - node-pre-gyp configure --target=$NODE_VERSION
   - node-pre-gyp build package --target=$NODE_VERSION --target_arch=ia32
-before_script:
-  - git config --global user.name "Ion Lupascu"
-  - git config --global user.email ionlupascu@gmail.com
 
 # Need S3 Upload for Artifacts
 addons:
@@ -48,6 +59,7 @@ addons:
 
 git:
   depth: 1
+
 branches:
   only:
     - master
@@ -55,4 +67,3 @@ branches:
 os:
   - linux
   - osx
-script: npm test
