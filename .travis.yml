@@ -22,8 +22,8 @@ before_script:
 before_install:
   - git clone https://github.com/creationix/nvm.git ./.nvm
   - source ./.nvm/nvm.sh
-  - nvm install $NODE_VERSION 64
-  - nvm use $NODE_VERSION
+  - nvm install 12 64
+  - nvm use 12
   - npm -v
   - node -v
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
@@ -34,21 +34,14 @@ before_install:
       sudo apt-get install -qq debhelper autotools-dev cups-ppdc libcups2-dev cups imagemagick ghostscript;
     fi
   - "export JOBS=4"
+  - npm install -g node-gyp node-pre-gyp
   - BUILD_ONLY=true npm install --build-from-source
 
 script:
-  - npm test
-
-after_script:
-  - nvm install 12 64
-  - nvm use 12
-  - rm -r node_modules
-  - npm install -g node-gyp node-pre-gyp
-  - npm install --build-from-source
   - node-pre-gyp configure --target=$NODE_VERSION
   - node-pre-gyp build package --target=$NODE_VERSION --target_arch=x64
   - node-pre-gyp configure --target=$NODE_VERSION
-  - node-pre-gyp build package --target=$NODE_VERSION --target_arch=ia32
+  - node-pre-gyp build package --target=$NODE_VERSION --target_arch=ia32  
 
 # Need S3 Upload for Artifacts
 addons:
