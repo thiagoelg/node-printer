@@ -17,8 +17,8 @@ matrix:
 before_install:
   - git clone https://github.com/creationix/nvm.git ./.nvm
   - source ./.nvm/nvm.sh
-  - nvm install $NODE_VERSION 64
-  - nvm use $NODE_VERSION
+  - nvm install 12 64
+  - nvm use 12
   - npm -v
   - node -v
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
@@ -30,12 +30,11 @@ before_install:
     fi
   - "export JOBS=4"
   - npm install -g node-gyp node-pre-gyp
-  - npm install
+  - BUILD_ONLY=true npm install --build-from-source
   - node-pre-gyp configure --target=$NODE_VERSION
   - node-pre-gyp build package --target=$NODE_VERSION --target_arch=x64
   - node-pre-gyp configure --target=$NODE_VERSION
   - node-pre-gyp build package --target=$NODE_VERSION --target_arch=ia32
-  - BUILD_ONLY=true npm install --build-from-source
 before_script:
   - git config --global user.name "Ion Lupascu"
   - git config --global user.email ionlupascu@gmail.com
