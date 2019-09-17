@@ -30,17 +30,16 @@ before_install:
     fi
   - "export JOBS=4"
   - npm install -g node-gyp node-pre-gyp
-  - BUILD_ONLY=true npm install --build-from-source
+  - node-pre-gyp configure --target=$NODE_VERSION
+  - node-pre-gyp build package --target=$NODE_VERSION --target_arch=x64
+  - node-pre-gyp configure --target=$NODE_VERSION
+  - node-pre-gyp build package --target=$NODE_VERSION --target_arch=ia32
+#  - BUILD_ONLY=true npm install --build-from-source
 before_script:
   - git config --global user.name "Ion Lupascu"
   - git config --global user.email ionlupascu@gmail.com
 
 after_script:
-  - node-pre-gyp configure --target=$NODE_VERSION
-  - node-pre-gyp build package --target=$NODE_VERSION --target_arch=x64
-
-  - node-pre-gyp configure --target=$NODE_VERSION
-  - node-pre-gyp build package --target=$NODE_VERSION --target_arch=ia32
   - npm test
 
 # Need S3 Upload for Artifacts
