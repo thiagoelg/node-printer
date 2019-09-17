@@ -39,9 +39,6 @@ before_script:
   - git config --global user.name "Ion Lupascu"
   - git config --global user.email ionlupascu@gmail.com
 
-after_script:
-  - npm test
-
 # Need S3 Upload for Artifacts
 addons:
   artifacts:
