@@ -21,3 +21,8 @@ if ($env:build_electron -ne "true") {
 ./tools/buildElectronWindows.ps1 4.2.10
 ./tools/buildElectronWindows.ps1 5.0.10
 ./tools/buildElectronWindows.ps1 6.0.7
+./tools/buildElectronWindows.ps1 7.3.3
+./tools/buildElectronWindows.ps1 8.5.5 
+./tools/buildElectronWindows.ps1 9.4.3
+./tools/buildElectronWindows.ps1 10.3.2
+./tools/buildElectronWindows.ps1 11.2.3
