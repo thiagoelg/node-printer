@@ -17,7 +17,6 @@
     "url": "git://github.com/thiagoelg/node-printer.git"
   },
   "devDependencies": {
-    "node-abi": "3.2.0",
     "nodeunit": "*",
     "npm-force-resolutions": "^0.0.10",
     "prebuild": "^11.0.3",
@@ -48,8 +47,5 @@
   "dependencies": {
     "nan": "^2.15.0",
     "prebuild-install": "^7.0.1"
-  },
-  "resolutions": {
-    "node-abi": "3.2.0"
   }
 }
