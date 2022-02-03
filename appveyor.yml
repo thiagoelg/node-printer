@@ -31,6 +31,7 @@ install:
   - cmd: SET JOBS=4
   - cmd: SET BUILD_ONLY=true
   - cmd: npm ci --build-from-source
+  - cmd: npm run postinstall
   - cmd: npm install -g prebuild
   - cmd: if %PLATFORM% EQU x86 (SET TP=ia32) else (set TP=x64)
   - cmd: prebuild --strip -r electron --all --arch %TP% -u %UTO%
