@@ -56,12 +56,7 @@
             ]
           }
         }],
-        ['OS="mac"', {
-          'cflags':[
-            "-stdlib=libc++"
-          ]
-        }],
-        [ 'OS=="mac"', {
+        ['OS=="mac"', {
           'cflags':[
             "-stdlib=libc++"
           ],
