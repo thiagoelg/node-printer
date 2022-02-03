@@ -37,7 +37,6 @@ jobs:
       - run: npm i
       - name: Prebuild
         run: |
-          npm run prebuild -- --strip --all --arch ia32 -u ${{ secrets.PREBUILD_TOKEN }}
           npm run prebuild -- --strip --all --arch x64 -u ${{ secrets.PREBUILD_TOKEN }}
   prebuild-windows:
     name: Prebuild Binaries for Windows

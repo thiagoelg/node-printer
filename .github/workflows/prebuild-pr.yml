@@ -35,7 +35,6 @@ jobs:
       - run: npm i
       - name: Prebuild
         run: |
-          npm run prebuild -- --strip --all --arch ia32
           npm run prebuild -- --strip --all --arch x64
   prebuild-windows:
     name: Prebuild Binaries for Windows
