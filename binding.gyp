@@ -61,7 +61,7 @@
             "-stdlib=libc++"
           ],
           'xcode_settings': {
-            "OTHER_CPLUSPLUSFLAGS":["-std=c++11", "-stdlib=libc++"],
+            "OTHER_CPLUSPLUSFLAGS":["-std=c++14", "-stdlib=libc++"],
             "OTHER_LDFLAGS": ["-stdlib=libc++"],
           },
         }],
