@@ -35,7 +35,7 @@ install:
   - cmd: if %PLATFORM% EQU x86 (SET TP=ia32) else (set TP=x64)
   # - cmd: prebuild --strip -r electron --all --arch %TP% -u %UTO%
   # - cmd: prebuild --strip -r node --all --arch %TP% -u %UTO%
-  - cmd: prebuild --strip --all --arch %TP% -u %UTO%
+  - cmd: npm run prebuild --strip --all --arch %TP% -u %UTO%
 test_script:
   - node --version
   - npm --version

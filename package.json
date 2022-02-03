@@ -30,6 +30,7 @@
     "install": "prebuild-install || node-gyp rebuild",
     "postinstall": "patch-package",
     "prebuild-all": "prebuild --all --force --strip --verbose --openssl_fips=X",
+    "prebuild": "prebuild",
     "rebuild": "node-gyp rebuild",
     "test": "nodeunit test"
   },
