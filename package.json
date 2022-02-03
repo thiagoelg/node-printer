@@ -19,7 +19,6 @@
   "devDependencies": {
     "node-abi": "^3.8.0",
     "nodeunit": "*",
-    "npm-force-resolutions": "^0.0.10",
     "patch-package": "^6.4.7",
     "prebuild": "^11.0.3",
     "prebuild-ci": "^4.0.0"
@@ -28,7 +27,6 @@
     "node": ">= 4.0.0"
   },
   "scripts": {
-    "preinstall": "npm-force-resolutions",
     "install": "prebuild-install || node-gyp rebuild",
     "postinstall": "patch-package",
     "prebuild-all": "prebuild --all --force --strip --verbose --openssl_fips=X",
@@ -51,8 +49,5 @@
   "dependencies": {
     "nan": "^2.15.0",
     "prebuild-install": "^7.0.1"
-  },
-  "resolutions": {
-    "node-gyp": "7.1.2"
   }
 }
