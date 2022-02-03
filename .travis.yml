@@ -22,10 +22,10 @@ before_script:
 
 script:
   - npm install -g prebuild
-  - npm run prebuild --strip --all -r electron --arch ia32 -u $PREBUILD_TOKEN
-  - npm run prebuild --strip --all -r electron --arch x64 -u $PREBUILD_TOKEN
-  - npm run prebuild --strip --all --arch ia32 -u $PREBUILD_TOKEN
-  - npm run prebuild --strip --all --arch x64 -u $PREBUILD_TOKEN
+  # - npm run prebuild -- --strip --all -r electron --arch ia32 -u $PREBUILD_TOKEN
+  # - npm run prebuild -- --strip --all -r electron --arch x64 -u $PREBUILD_TOKEN
+  - npm run prebuild -- --strip --all --arch ia32 -u $PREBUILD_TOKEN
+  - npm run prebuild -- --strip --all --arch x64 -u $PREBUILD_TOKEN
 
 os:
   - linux
