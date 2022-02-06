@@ -2,32 +2,11 @@ Node Printer Prebuild
 ============
 Native bind printers on POSIX and Windows OS from Node.js, electron and node-webkit.
 
+[![npm version](https://badge.fury.io/js/@thiagoelg%2Fnode-printer.svg)](https://www.npmjs.com/package/@thiagoelg/node-printer) [![Prebuild Binaries and Publish](https://github.com/thiagoelg/node-printer/actions/workflows/prebuild-master.yml/badge.svg)](https://github.com/thiagoelg/node-printer/actions/workflows/prebuild-master.yml)
+
 > It just works with Node 12 because of @thiagoelg in his [PR](https://github.com/tojocky/node-printer/pull/261)
 
 > Prebuild and CI integration courtesy of @ekoeryanto in his [FORK](https://github.com/ekoeryanto/node-printer)
-
-<table>
-  <thead>
-    <tr>
-      <th>Linux</th>
-      <th>Windows</th>
-      <th>Dependencies</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td align="center">
-        <a href="https://travis-ci.com/thiagoelg/node-printer"><img src="https://travis-ci.com/thiagoelg/node-printer.svg?branch=master"></a>
-      </td>
-      <td align="center">
-        <a href="https://ci.appveyor.com/project/thiagoelg/node-printer"><img src="https://ci.appveyor.com/api/projects/status/re16g0ikobhl9ghq/branch/master?svg=true"></a>
-      </td>
-      <td align="center">
-        <a href="https://david-dm.org/thiagoelg/node-printer"><img src="https://david-dm.org/thiagoelg/node-printer.svg"></a>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 If you have a problem, ask question to [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tojocky/node-printer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) or find/create a new [Github issue](https://github.com/thiagoelg/node-printer/issues)
 
