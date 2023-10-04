@@ -20,7 +20,7 @@
       'sources': [
         # is like "ls -1 src/*.cc", but gyp does not support direct patterns on
         # sources
-        '<!@(["python", "tools/getSourceFiles.py", "src", "cc"])'
+        '<!@(["python3", "tools/getSourceFiles.py", "src", "cc"])'
       ],
       'include_dirs' : [
         "<!(node -e \"require('nan')\")"
