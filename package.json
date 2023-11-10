@@ -47,7 +47,7 @@
   ],
   "main": "./lib/printer",
   "dependencies": {
-    "nan": "^2.15.0",
+    "nan": "^2.18.0",
     "prebuild-install": "^7.0.1"
   },
   "types": "types/index.d.ts"
