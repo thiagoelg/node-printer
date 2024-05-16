@@ -14,10 +14,10 @@ jobs:
           sudo dpkg --add-architecture i386
           sudo apt-get update -y -qq
           sudo apt-get install -y g++-multilib gcc-multilib libcups2-dev libcups2-dev:i386 libc6-dev-i386 linux-libc-dev linux-libc-dev:i386
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.x
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
         run: |
@@ -26,13 +26,13 @@ jobs:
           npm run prebuild -- --strip --all --arch x64
   prebuild-macos:
     name: Prebuild Binaries for macOS
-    runs-on: macos-latest
+    runs-on: macos-13
     timeout-minutes: 30
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.x
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
         run: |
@@ -43,10 +43,10 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
           node-version: 16.x
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - run: npm i
       - name: Prebuild
         run: |
