@@ -27,7 +27,7 @@ export interface PrintFileOptions {
     error?: PrintOnErrorFunction | undefined;
 }
 
-export type PrintOnSuccessFunction = (jobId: string) => any;
+export type PrintOnSuccessFunction = (jobId: number) => any;
 export type PrintOnErrorFunction = (err: Error) => any;
 
 export interface PrinterDetails {
