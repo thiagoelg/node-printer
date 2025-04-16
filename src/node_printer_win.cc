@@ -27,7 +27,7 @@ namespace{
         * @param iSizeKbytes size in bytes of required allocating memory
         */
         MemValue(const DWORD iSizeKbytes) {
-            _value = (Type*)malloc(iSizeKbytes);
+	   this->_value = (Type*)malloc(iSizeKbytes);
         }
 		
         ~MemValue () {
@@ -35,10 +35,10 @@ namespace{
         }
     protected:
         virtual void free() {
-            if(_value != NULL)
+            if(this->_value != NULL)
             {
-                ::free(_value);
-                _value = NULL;
+                ::free(this->_value);
+                this->_value = NULL;
             }
         }
     };
